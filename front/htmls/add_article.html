@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    {{ block.super }}
+    <link href="../static/styles/newArticleContentStyles.css?1044" rel="stylesheet">
+{% endblock %}
+{% block script %}
+    {{ block.super }}
+    <script src="../static/scripts/addartScript.js/?77"></script>
+{% endblock %}
+{% block main_content %}
+        <div class="main-content">
+            <form id="add-article" method="post" enctype="multipart/form-data" action="..">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit">
+            </form>
+        </div>
+        <!-- Script helping the display the page correctly -->
+        <script>
+            let height = window.innerHeight;
+            let main_content = document.getElementsByClassName('main-content')[0];
+            main_content.style.height = height - 150 + 'px';
+            let main_content_form = document.getElementById('add-article');
+            if (main_content_form.scrollHeight >= Number(main_content.style.height.replaceAll('px', ''))) {
+                main_content.style.height = 'auto';
+            }
+        </script>
+{% endblock %}

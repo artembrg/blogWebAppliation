@@ -1,0 +1,21 @@
+.main-content__go-further {
+    display: inline-block;
+    vertical-align: top;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 30px;
+    width: calc(48% - 2px);
+    background: rgba(255, 255, 255, 0.8);
+    margin: 0.5%;
+}
+
+.main-content__go-further-img {
+    width: 100%;
+}
+
+@media screen and (max-width: 1300px) {
+    .main-content__go-further {
+        border-radius: 10px;
+        width: calc(49% - 2px);
+    }
+}

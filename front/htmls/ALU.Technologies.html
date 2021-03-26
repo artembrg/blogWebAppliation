@@ -1,0 +1,64 @@
+<!-- Данный HTML был написан до написания самого приложения, послужив лишь примером дизайна главной страницы
+Отсюда же были заимствованы и блоки для базового шаблона и шаблона главной страницы -->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Блог "ALU.Technologies"</title>
+    <link rel="shortcut icon" href="../images/icon.png" type="image/png">
+    <link href="../styles/styles.css" rel="stylesheet">
+    <script src="../scripts/scrollScript.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header class="header">
+        <div class="header-block">
+            <button id="scrollUp" onmouseup="scrollUp()" class="header-scroll-up__button">^^ Наверх ^^</button>
+            <div class="header-logo">
+                <img src="../images/logo.png" class="header-logo__image">
+            </div>
+            <div class="header-inputs">
+                <form method="get" action="ALU.Technologies.html" class="search">
+                    <input type="text" name="search" class="header-search__input" placeholder="Поиск...">
+                    <input type="submit" name="go" class="header-search__submit" value="">
+                </form>
+            </div>
+        </div>
+    </header>
+    <div class="body">
+        <div class="main-content">
+            <a href="ALU.Technologies.html">
+                <div class="main-content__go-further">
+                    <img src="../images/template0.png" class="main_content__go-further-img" onmouseover="changePic(0)" onmouseleave="changePicBack(0)">
+                </div>
+            </a>
+            <a href="ALU.Technologies.html">
+                <div class="main-content__go-further">
+                    <img src="../images/template1.png" class="main_content__go-further-img" onmouseover="changePic(1)" onmouseleave="changePicBack(1)">
+                </div>
+            </a>
+        </div>
+        <script>
+            let height = window.innerHeight;
+            let main_content = document.getElementsByClassName('main-content')[0];
+            main_content.style.height = 'auto';
+            let main_content_button = document.getElementsByClassName('main-content__go-further')[0];
+            if (main_content_button.scrollHeight <= height - 150) {
+                main_content.style.height = height - 150 + 'px';
+            }
+        </script>
+        <div class="useful-links">
+            <div class="useful-links-link">
+                <p class="useful-links-link__descr">Наш Instagram</p>
+                <br><img src="../images/insta_logo.png" class="useful-links__img"> <!-- тут ссылочку бы -->
+            </div>
+            <div class="useful-links-link">
+                <p class="useful-links-link__descr">Наш VK</p>
+                <br><img src="../images/vk_logo.png" class="useful-links__img"> <!-- тут ссылочку бы -->
+            </div>
+            <div class="useful-links-link">
+                <p class="useful-links-link__descr">Наш YouTube</p>
+                <br><img src="../images/youtube_logo.png" class="useful-links__img"> <!-- тут ссылочку бы -->
+            </div>
+        </div>
+    </div>
+</body>

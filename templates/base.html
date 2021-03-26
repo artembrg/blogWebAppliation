@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Блог "ALU.Technologies"</title>
+    <link rel="shortcut icon" href="../static/images/icon.png/?55" type="image/png">
+    <!-- Using this block in extended templates the application can import other styles -->
+    {% block style %}<link href="../static/styles/styles.css?750" rel="stylesheet">{% endblock %}
+    <!-- As mentioned a little upper, application can import scripts using this block -->
+    {% block script %}<script src="../static/scripts/main.js/?95"></script>{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- In this version the application doesn't use this block, but maybe... -->
+    {% block header %}
+    <header class="header">
+        <div class="header-block">
+            <button id="scrollUp" onmouseup="scrollUp()" class="header-scroll-up__button">^^ Наверх ^^</button>
+            <div class="header-logo">
+                <a href=".." ><img src="../static/images/logo.png/?7452" class="header-logo__image"></a>
+            </div>
+            <div class="header-inputs">
+                <form method="get" action="#" class="search"> <!-- In this version search is not implemented -->
+                    <input type="text" name="search" class="header-search__input" placeholder="Поиск...">
+                    <input type="submit" name="go" class="header-search__submit" value="">
+                </form>
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+    <div class="body">
+        <!-- The most important block. Here the application can form a different content on each page -->
+        {% block main_content %}
+        {% endblock %}
+        <div class="useful-links">
+            <!-- Look at description of the header block :) -->
+            {% block useful_links %}
+            <div class="useful-links-link">
+                <p class="useful-links-link__descr">Наш Instagram</p>
+                <br><img src="../static/images/insta_logo.png/?24" class="useful-links__img"> <!-- Here is must bee link -->
+            </div>
+            <div class="useful-links-link">
+                <p class="useful-links-link__descr">Наш VK</p>
+                <br><img src="../static/images/vk_logo.png/?782" class="useful-links__img"> <!-- Here is must be link -->
+            </div>
+            <div class="useful-links-link">
+                <p class="useful-links-link__descr">Наш YouTube</p>
+                <br><img src="../static/images/youtube_logo.png/?200" class="useful-links__img"> <!-- Here is must be link -->
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+</body>

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    {{ block.super }}
+    <link href="../static/styles/articlesContentStyles.css?1028" rel="stylesheet">
+{% endblock %}
+{% block script %}
+    {{ block.script }}
+    <script src="../static/scripts/articlesScript.js/?475"></script>
+{% endblock %}
+{% block main_content %}
+    <div class="main-content">
+        <div class="main-content__head">
+            <p class="main-content__head-text">Авторские статьи</p>
+            <form method="get" action="add_article" class="main-content__head-form">
+                <input type="submit" class="main-content__head-article-adding" value="Новая статья">
+            </form>
+        </div>
+        <div class="main-content__articles">
+            {% for a in data %} <!-- Forming a list of divs with article names -->
+            {% if a.id_on_view < 5 %} <!-- At the start the application should display the first five articles -->
+            <div class="main-content__article">
+                <img src="{{a.img.url}}" class="article__img">
+                <p class="article__name">
+                    {{a.topic}}
+                </p>
+                <p class="article__description">
+                    {{a.description}}
+                </p>
+            </div>
+            {% else %} <!-- For the other articles the application should hide each article -->
+            <div class="main-content__article-hidden">
+                <img src="{{a.img.url}}" class="article__img-hidden">
+                <p class="article__name-hidden">
+                    {{a.topic}}
+                </p>
+                <p class="article__description-hidden">
+                    {{a.description}}
+                </p>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Script helping the display the page correctly -->
+    <script>
+        setTimeout(window.onresize, 2000);
+    </script>
+{% endblock %}

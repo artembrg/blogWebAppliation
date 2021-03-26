@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    {{ block.super }}
+    <link href="../static/styles/indexContentStyles.css?785" rel="stylesheet">
+{% endblock %}
+{% block script %}
+    {{ block.super }}
+    <script src="../static/scripts/mainScript.js/?22"></script>
+{% endblock %}
+{% block main_content %}
+        <div class="main-content">
+            <a href="articles">
+                <div class="main-content__go-further">
+                    <img src="../static/images/template0.png/?55" class="main-content__go-further-img" onmouseover="changePic(0)" onmouseleave="changePicBack(0)">
+                </div>
+            </a>
+            <a href="about">
+                <div class="main-content__go-further">
+                    <img src="../static/images/template1.png/?74" class="main-content__go-further-img" onmouseover="changePic(1)" onmouseleave="changePicBack(1)">
+                </div>
+            </a>
+        </div>
+        <!-- Script helping the display the page correctly -->
+        <script>
+            let height = window.innerHeight;
+            let main_content = document.getElementsByClassName('main-content')[0];
+            main_content.style.height = 'auto';
+            let main_content_button = document.getElementsByClassName('main-content__go-further')[0];
+            if (main_content_button.scrollHeight <= height - 150) {
+                main_content.style.height = height - 150 + 'px';
+            }
+        </script>
+{% endblock %}

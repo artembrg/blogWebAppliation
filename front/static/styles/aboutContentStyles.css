@@ -1,0 +1,14 @@
+p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.95);
+    font-family: "Candara Light";
+    font-size: 20px;
+    color: #000088;
+}
+
+@media (max-width: 1300px) {
+    p {
+        font-size: 10px;
+    }
+}
